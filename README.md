@@ -117,6 +117,28 @@ python veilstrike.py google.com --json > results.json
 
 ---
 
+## 📸 Screenshots
+
+VeilStrike provides clean, readable output with color-coded results:
+
+```
+    VEILSTRIKE
+CDN Exposure & Origin Intelligence Scanner
+
+[+] Version          : 1.0.0
+[+] Author           : Galmx
+[+] GitHub           : https://github.com/xdrew87/VeilStrike
+[+] Module           : CDN Detection | Origin Resolution
+
+Target: google.com
+Cloudflare Detected: False
+Web Server: gws
+IPv4: 142.251.127.101, 142.251.127.139, 142.251.127.113, 142.251.127.100, 142.251.127.138
+IPv6: 2a00:1450:4001:804::200e
+```
+
+---
+
 ## Contributing
 
 Contributions are welcome! To contribute:

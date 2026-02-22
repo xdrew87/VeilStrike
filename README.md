@@ -118,6 +118,7 @@ python veilstrike.py google.com --json > results.json
 ---
 
 ## 📸 Screenshots
+<img width="706" height="302" alt="Screenshot 2026-02-22 143613" src="https://github.com/user-attachments/assets/f55922bd-d7b6-4ce7-8c1e-0d9abbdac9ae" />
 
 VeilStrike provides clean, readable output with color-coded results:
 

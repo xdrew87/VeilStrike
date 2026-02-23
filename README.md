@@ -1,177 +1,268 @@
-# VeilStrike
+# 🎯 VeilStrike
+
+<div align="center">
 
 ![GitHub](https://img.shields.io/github/license/xdrew87/VeilStrike?style=flat-square)
 ![Python](https://img.shields.io/badge/python-3.7+-blue?style=flat-square)
 ![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.0.0-orange?style=flat-square)
 
-> **A powerful CDN exposure & origin intelligence scanner for discovering unprotected web server origins.**
+**A powerful CDN exposure & origin intelligence scanner for discovering unprotected web server origins.**
 
-VeilStrike is a specialized tool designed to identify and resolve origin IP addresses of websites **NOT protected by Cloudflare** or other CDN providers. Built for security researchers, penetration testers, and OSINT investigators, it provides fast and reliable origin discovery on unprotected targets.
+*Uncover real IP addresses of websites NOT protected by Cloudflare and other CDN providers*
 
----
-
-## Table of Contents
-
-- [Features](#-features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Examples](#examples)
-- [Disclaimer](#-disclaimer)
-- [Credits](#-credits)
-- [License](#license)
+</div>
 
 ---
 
-## 🎯 Features
+## 💡 Overview
 
-- ✅ **Origin IP Discovery** - Uncover real IP addresses of unprotected web servers
-- ✅ **CDN Detection** - Identify if a site is behind Cloudflare or other protection
-- ✅ **IP Resolution** - Resolve both IPv4 and IPv6 addresses
-- ✅ **Server Fingerprinting** - Extract web server headers and identify technologies
-- ✅ **Batch Scanning** - Process multiple targets efficiently
-- ✅ **JSON Export** - Integrate with other tools and workflows
-- ✅ **Lightweight & Fast** - Optimized for speed and minimal dependencies
-- ✅ **OSINT Ready** - Perfect for security research and investigations
+VeilStrike is a specialized reconnaissance tool designed to identify and resolve origin IP addresses of websites **NOT protected by Cloudflare** or other CDN providers. Built for security researchers, penetration testers, and OSINT investigators, it provides fast and reliable origin discovery on unprotected targets with advanced fingerprinting capabilities.
 
----
+## 📑 Quick Navigation
 
-## Requirements
-
-- Python 3.7 or higher
-- `requests` library
-- `colorama` library (for colored output)
-- Valid SecurityTrails API key (optional, for enhanced results)
+<table>
+<tr>
+<td><a href="#-features">✨ Features</a></td>
+<td><a href="#-quick-start">🚀 Quick Start</a></td>
+<td><a href="#-usage-guide">📖 Usage</a></td>
+<td><a href="#-examples">💻 Examples</a></td>
+<td><a href="#-license">⚖️ License</a></td>
+</tr>
+</table>
 
 ---
 
-## Installation
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🔍 **Origin IP Discovery** | Uncover real IP addresses of unprotected web servers with precision |
+| 🛡️ **CDN Detection** | Identify if a site is behind Cloudflare or other protection layers |
+| 🌐 **Dual Protocol Support** | Resolve both IPv4 and IPv6 addresses seamlessly |
+| 🔎 **Server Fingerprinting** | Extract web server headers and identify technologies in use |
+| ⚡ **Batch Processing** | Efficiently process multiple targets from wordlists |
+| 📊 **JSON Export** | Export results in structured JSON for tool integration |
+| 🚀 **Lightweight & Fast** | Optimized for speed with minimal dependencies |
+| 🕵️ **OSINT Ready** | Purpose-built for security research and investigations |
+
+---
+
+## 📋 Requirements
+
+```
+Python 3.7+
+requests library
+colorama library (for colored output)
+SecurityTrails API key (optional)
+```
+
+| Requirement | Purpose |
+|-------------|---------|
+| **Python 3.7+** | Core runtime environment |
+| **requests** | HTTP library for making API calls |
+| **colorama** | Enhanced console output styling |
+| **SecurityTrails API** | *(Optional)* Enhanced origin detection accuracy |
+
+---
+
+## 🚀 Quick Start
+
+### Installation
 
 Clone the repository and install dependencies:
 
 ```bash
+# Clone the repository
 git clone https://github.com/xdrew87/VeilStrike.git
 cd VeilStrike
+
+# Install required dependencies
 pip install -r requirements.txt
 ```
 
----
+### Configuration (Optional)
 
-## Configuration
-
-To use SecurityTrails API for enhanced origin detection, configure your API key in `config.ini`:
+To use SecurityTrails API for enhanced origin detection, create/update `config.ini`:
 
 ```ini
 [API_KEYS]
-SECURITYTRAILS_API_KEY = YOUR_KEY_HERE
+SECURITYTRAILS_API_KEY = YOUR_API_KEY_HERE
 ```
 
-> **Note:** Get your free API key from [SecurityTrails Dashboard](https://securitytrails.com)
+> 💡 Get your free API key from [SecurityTrails Dashboard](https://securitytrails.com)
 
 ---
 
-## Usage
+## 📖 Usage Guide
 
-### Basic Usage
-
-Scan a single domain:
+### Single Target Scan
 
 ```bash
 python veilstrike.py example.com
 ```
 
-### JSON Output
-
-Export results in JSON format for automation:
+### JSON Output for Integration
 
 ```bash
 python veilstrike.py example.com --json
 ```
 
-### Batch Scanning
-
-Scan multiple domains from a file:
+### Batch Scanning from File
 
 ```bash
-python veilstrike.py sites.txt --json
+python veilstrike.py targets.txt --json
 ```
+
+### Output Options
+
+| Flag | Purpose |
+|------|---------|
+| `--json` | Export results in JSON format |
+| `-o FILE` | Save output to specified file |
+| `-v` | Verbose mode with detailed information |
 
 ---
 
-## Examples
+## 💻 Examples
 
-**Single Domain Scan:**
-```
+### Example 1: Single Domain Scan
+
+```bash
 $ python veilstrike.py google.com
+```
+
+**Output:**
+```
 [+] Target: google.com
 [+] Cloudflare: No
 [+] Origin IP: 142.251.32.46
 [+] Server: gws
+[+] Country: US
 ```
 
-**JSON Export:**
+### Example 2: JSON Export
+
 ```bash
 python veilstrike.py google.com --json > results.json
+```
+
+### Example 3: Batch Scanning
+
+```bash
+python veilstrike.py targets.txt --json -o batch_results.json
+```
+
+### Example 4: Verbose Mode
+
+```bash
+python veilstrike.py example.com -v
 ```
 
 ---
 
 ## 📸 Screenshots
+<img width="706" height="302" alt="Screenshot 2026-02-22 143613" src="https://github.com/user-attachments/assets/f55922bd-d7b6-4ce7-8c1e-0d9abbdac9ae" />
 
-VeilStrike provides clean, readable output with color-coded results:
+VeilStrike provides clean, color-coded output for easy analysis:
+<div align="center">
 
+![VeilStrike Sample Output](https://github.com/user-attachments/assets/f55922bd-d7b6-4ce7-8c1e-0d9abbdac9ae)
+
+</div>
+
+**Example Console Output:**
 ```
-    VEILSTRIKE
-CDN Exposure & Origin Intelligence Scanner
+╔════════════════════════════════════════════════════════════════════╗
+║                        VEILSTRIKE v1.0.0                          ║
+║            CDN Exposure & Origin Intelligence Scanner             ║
+╚════════════════════════════════════════════════════════════════════╝
 
 [+] Version          : 1.0.0
 [+] Author           : Galmx
 [+] GitHub           : https://github.com/xdrew87/VeilStrike
 [+] Module           : CDN Detection | Origin Resolution
 
-Target: google.com
-Cloudflare Detected: False
-Web Server: gws
-IPv4: 142.251.127.101, 142.251.127.139, 142.251.127.113, 142.251.127.100, 142.251.127.138
-IPv6: 2a00:1450:4001:804::200e
+────────────────────────────────────────────────────────────────────
+[*] Scanning Target: google.com
+────────────────────────────────────────────────────────────────────
+
+✓ Cloudflare Detected  : False
+✓ Web Server           : gws
+✓ IPv4 Addresses       : 142.251.127.101, 142.251.127.139
+                         142.251.127.113, 142.251.127.100
+                         142.251.127.138
+✓ IPv6 Address         : 2a00:1450:4001:804::200e
+✓ Country              : United States
+✓ ASN                  : AS15169 (Google LLC)
+
+────────────────────────────────────────────────────────────────────
+[+] Scan completed successfully!
 ```
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! To contribute:
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Submit a pull request
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Submit** a Pull Request
+
+### Contribution Ideas
+- 🐛 Bug fixes and improvements
+- 📚 Documentation enhancements
+- ⚡ Performance optimizations
+- 🔧 New detection methods
+- 📊 Additional export formats
 
 ---
 
-## ⚖️ Disclaimer
+## ⚖️ Legal & Disclaimer
 
-This tool is provided **for authorized security testing and OSINT research only**. Users are solely responsible for ensuring they have proper authorization to scan target websites. Unauthorized access to computer systems is illegal. Always follow applicable laws and obtain written permission before conducting security assessments.
+> ⚠️ **IMPORTANT**: This tool is provided **for authorized security testing and OSINT research only**.
+
+**Users are solely responsible for ensuring they have proper authorization before using this tool.**
+
+### Key Points:
+- 🔒 Only scan targets you own or have explicit written permission to test
+- ⚖️ Unauthorized access to computer systems is **illegal**
+- 📋 Always comply with applicable laws and regulations
+- 💼 Obtain written authorization before conducting security assessments
+- 🌐 Respect privacy and data protection laws
+
+This tool is intended for legitimate security research, penetration testing, and OSINT purposes only.
 
 ---
 
-## 📝 Credits
+## 📝 Credits & Inspiration
 
-This project was inspired by and built upon the excellent work from [**CloakQuest3r**](https://github.com/spyboy-productions/CloakQuest3r) by [spyboy-productions](https://github.com/spyboy-productions). 
+This project stands on the shoulders of giants! 🦸
 
-VeilStrike extends and optimizes the original concept with:
-- Enhanced non-Cloudflare origin discovery
-- Improved resolution accuracy
-- Additional technological fingerprinting
-- Better performance and reliability
+### Built Upon
+[**CloakQuest3r**](https://github.com/spyboy-productions/CloakQuest3r) by [@spyboy-productions](https://github.com/spyboy-productions)
+
+### VeilStrike Enhancements
+- 🚀 Enhanced non-Cloudflare origin discovery algorithms
+- 🎯 Improved resolution accuracy and reliability
+- 🔧 Advanced technological fingerprinting capabilities
+- ⚡ Optimized performance for batch operations
+- 📊 Enhanced reporting and export formats
+
+**Thank you to all contributors and the security community!** 🙏
 
 ---
 
-## License
+## 📜 License
 
-MIT License - See [LICENSE](LICENSE) file for details
+**GNU AFFERO GENERAL PUBLIC LICENSE Version 3**
+
+This project is licensed under the AGPL-3.0 License - a strong copyleft license that ensures derivative works remain open source.
+
+See the [LICENSE](LICENSE) file for complete details.
 
 ---
 

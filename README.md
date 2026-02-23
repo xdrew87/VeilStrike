@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![GitHub](https://img.shields.io/github/license/xdrew87/VeilStrike?style=flat-square)
+![License](https://img.shields.io/badge/license-AGPL--3.0-blue?style=flat-square)
 ![Python](https://img.shields.io/badge/python-3.7+-blue?style=flat-square)
 ![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)
 ![Version](https://img.shields.io/badge/version-1.0.0-orange?style=flat-square)
@@ -266,4 +266,22 @@ See the [LICENSE](LICENSE) file for complete details.
 
 ---
 
-**⭐ If you find this tool useful, please consider giving it a star!**
+<div align="center">
+
+### 🌟 Support & Feedback
+
+If you find VeilStrike useful, please consider:
+- ⭐ Giving it a star on GitHub
+- 🐛 Reporting issues and bugs
+- 💡 Suggesting improvements
+- 🤝 Contributing to the project
+
+**Questions?** Open an issue or reach out to the community!
+
+---
+
+**Made with ❤️ by the Security Research Community**
+
+*Last Updated: February 2026*
+
+</div>
